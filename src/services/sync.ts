@@ -2,7 +2,7 @@ import { CollectionRecord, SyncStatus } from '../types/collection';
 import { dbService } from './database';
 
 class SyncService {
-  private apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+  private apiUrl = import.meta.env.VITE_API_URL || `${window.location.protocol}//localhost:3001/api`;
   private syncInterval: NodeJS.Timeout | null = null;
   private listeners: Array<(status: SyncStatus) => void> = [];
 
